@@ -1,3 +1,5 @@
+import {useState} from 'react';
+
 function Header() {
 	
 	const langs = [
@@ -5,12 +7,12 @@ function Header() {
 		{key: 'en', name: 'English'}
 	]
 	
-	let currentLang = langs[0].key;
+	const [currentLang, setCurrentLang] = useState(langs[0].key);
 	
 	const changeLang = (langKey) => {
-		console.log('before:', currentLang);
-		currentLang = langKey;
-		console.log('after:', currentLang);
+	
+		setCurrentLang(langKey);
+		
 	}
 	
 	
